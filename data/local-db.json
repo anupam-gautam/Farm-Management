@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "seededAt": "2026-09-09T16:27:11.224Z"
+  },
+  "accounts": [
+    {
+      "id": "acc_1788971231224_0",
+      "username": "admin",
+      "role": "owner",
+      "display_name": "Farm Owner",
+      "must_change_password": false,
+      "active": true,
+      "salt": "1509a8abe207adb18d2f4b24b21d15cc",
+      "hash": "c19ce1a64ec22caeceb9bf13c4250d2fb72c7aa3c0d3e362ae95f72343823a07",
+      "iterations": 100000,
+      "created_at": "2026-09-09T16:27:11.224Z",
+      "updated_at": "2026-09-09T16:27:47.897Z"
+    },
+    {
+      "id": "acc_1788971231224_1",
+      "username": "worker",
+      "role": "worker",
+      "display_name": "Farm Worker",
+      "must_change_password": false,
+      "active": true,
+      "salt": "50eb4feb2ca17fff46670c1a811a9b7e",
+      "hash": "05a95a95947242962e6fbdaa7672409a495ece5ba72fb206b2469a481dd53498",
+      "iterations": 100000,
+      "created_at": "2026-09-09T16:27:11.224Z",
+      "updated_at": "2026-09-09T16:29:08.551Z"
+    },
+    {
+      "id": "acc_1789010445353_2",
+      "username": "ram",
+      "role": "worker",
+      "display_name": "Ram",
+      "hash": "4805f43b2c01945d2098277e7fb32ca957a21961bbd161d1255666ee94cb327f",
+      "salt": "7065d37992a6f4213d885d4699303afd",
+      "iterations": 100000,
+      "must_change_password": false,
+      "active": true,
+      "created_at": "2026-09-10T03:20:45.353Z",
+      "updated_at": "2026-09-10T03:46:54.438Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_1789009654068_1",
+      "title": "g",
+      "description": "",
+      "scheduled_at": null,
+      "recurrence": "daily",
+      "recurrence_weekdays": null,
+      "recurrence_time": "13:01",
+      "recurrence_ends_at": null,
+      "priority": "normal",
+      "photo_required": false,
+      "assigned_account_id": "acc_1788971231224_1",
+      "active": true,
+      "created_by": "acc_1788971231224_0",
+      "created_at": "2026-09-10T03:07:34.068Z",
+      "updated_at": "2026-09-10T03:20:02.591Z",
+      "skipped_due_at": [
+        "2026-09-10T07:16:00.000Z",
+        "2026-09-09T07:16:00.000Z"
+      ]
+    },
+    {
+      "id": "task_1789009891264_2",
+      "skipped_due_at": [],
+      "title": "Daily",
+      "description": "",
+      "scheduled_at": null,
+      "recurrence": "daily",
+      "recurrence_weekdays": null,
+      "recurrence_time": "08:00",
+      "recurrence_ends_at": null,
+      "priority": "normal",
+      "photo_required": false,
+      "assigned_account_id": "acc_1788971231224_1",
+      "active": true,
+      "created_by": "owner",
+      "created_at": "2026-09-10T03:11:31.264Z",
+      "updated_at": "2026-09-10T03:11:31.264Z"
+    },
+    {
+      "id": "task_1789009891307_3",
+      "skipped_due_at": [],
+      "title": "Special",
+      "description": "",
+      "scheduled_at": "2026-09-10T02:15:00.000Z",
+      "recurrence": "none",
+      "recurrence_weekdays": null,
+      "recurrence_time": null,
+      "recurrence_ends_at": null,
+      "priority": "urgent",
+      "photo_required": false,
+      "assigned_account_id": "acc_1788971231224_1",
+      "active": true,
+      "created_by": "owner",
+      "created_at": "2026-09-10T03:11:31.307Z",
+      "updated_at": "2026-09-10T03:11:31.307Z"
+    },
+    {
+      "id": "task_1789011008310_3",
+      "skipped_due_at": [],
+      "title": "testttt",
+      "description": "",
+      "scheduled_at": null,
+      "recurrence": "daily",
+      "recurrence_weekdays": null,
+      "recurrence_time": "08:00",
+      "recurrence_ends_at": null,
+      "priority": "normal",
+      "photo_required": false,
+      "assigned_account_ids": [
+        "acc_1788971231224_1",
+        "acc_1789010445353_2"
+      ],
+      "assigned_account_id": "acc_1788971231224_1",
+      "active": true,
+      "created_by": "acc_1788971231224_0",
+      "created_at": "2026-09-10T03:30:08.310Z",
+      "updated_at": "2026-09-10T03:30:08.310Z"
+    },
+    {
+      "id": "task_1789014832149_4",
+      "skipped_due_at": [],
+      "title": "testtesttesttest",
+      "description": "",
+      "scheduled_at": null,
+      "recurrence": "daily",
+      "recurrence_weekdays": null,
+      "recurrence_time": "08:00",
+      "recurrence_ends_at": null,
+      "priority": "normal",
+      "photo_required": false,
+      "assigned_account_ids": [
+        "acc_1789010445353_2"
+      ],
+      "assigned_account_id": "acc_1789010445353_2",
+      "active": true,
+      "created_by": "acc_1788971231224_0",
+      "created_at": "2026-09-10T04:33:52.149Z",
+      "updated_at": "2026-09-10T04:33:52.149Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "id": "occ_1789009654074_13",
+      "status": "pending",
+      "task_id": "task_1789009654068_1",
+      "due_at": "2026-09-11T07:16:00.000Z",
+      "created_at": "2026-09-10T03:07:34.074Z"
+    },
+    {
+      "id": "occ_1789009654074_14",
+      "status": "pending",
+      "task_id": "task_1789009654068_1",
+      "due_at": "2026-09-12T07:16:00.000Z",
+      "created_at": "2026-09-10T03:07:34.074Z"
+    },
+    {
+      "id": "occ_1789009654074_15",
+      "status": "pending",
+      "task_id": "task_1789009654068_1",
+      "due_at": "2026-09-13T07:16:00.000Z",
+      "created_at": "2026-09-10T03:07:34.074Z"
+    },
+    {
+      "id": "occ_1789009654074_16",
+      "status": "pending",
+      "task_id": "task_1789009654068_1",
+      "due_at": "2026-09-14T07:16:00.000Z",
+      "created_at": "2026-09-10T03:07:34.074Z"
+    },
+    {
+      "id": "occ_1789009654074_17",
+      "status": "pending",
+      "task_id": "task_1789009654068_1",
+      "due_at": "2026-09-15T07:16:00.000Z",
+      "created_at": "2026-09-10T03:07:34.074Z"
+    },
+    {
+      "id": "occ_1789009654074_18",
+      "status": "pending",
+      "task_id": "task_1789009654068_1",
+      "due_at": "2026-09-16T07:16:00.000Z",
+      "created_at": "2026-09-10T03:07:34.074Z"
+    },
+    {
+      "id": "occ_1789009654074_19",
+      "status": "pending",
+      "task_id": "task_1789009654068_1",
+      "due_at": "2026-09-17T07:16:00.000Z",
+      "created_at": "2026-09-10T03:07:34.074Z"
+    },
+    {
+      "id": "occ_1789009891269_20",
+      "status": "pending",
+      "task_id": "task_1789009891264_2",
+      "due_at": "2026-09-10T02:15:00.000Z",
+      "created_at": "2026-09-10T03:11:31.269Z"
+    },
+    {
+      "id": "occ_1789009891269_21",
+      "status": "pending",
+      "task_id": "task_1789009891264_2",
+      "due_at": "2026-09-11T02:15:00.000Z",
+      "created_at": "2026-09-10T03:11:31.269Z"
+    },
+    {
+      "id": "occ_1789009891269_22",
+      "status": "pending",
+      "task_id": "task_1789009891264_2",
+      "due_at": "2026-09-12T02:15:00.000Z",
+      "created_at": "2026-09-10T03:11:31.269Z"
+    },
+    {
+      "id": "occ_1789009891269_23",
+      "status": "pending",
+      "task_id": "task_1789009891264_2",
+      "due_at": "2026-09-13T02:15:00.000Z",
+      "created_at": "2026-09-10T03:11:31.269Z"
+    },
+    {
+      "id": "occ_1789009891269_24",
+      "status": "pending",
+      "task_id": "task_1789009891264_2",
+      "due_at": "2026-09-14T02:15:00.000Z",
+      "created_at": "2026-09-10T03:11:31.269Z"
+    },
+    {
+      "id": "occ_1789009891269_25",
+      "status": "pending",
+      "task_id": "task_1789009891264_2",
+      "due_at": "2026-09-15T02:15:00.000Z",
+      "created_at": "2026-09-10T03:11:31.269Z"
+    },
+    {
+      "id": "occ_1789009891269_26",
+      "status": "pending",
+      "task_id": "task_1789009891264_2",
+      "due_at": "2026-09-16T02:15:00.000Z",
+      "created_at": "2026-09-10T03:11:31.269Z"
+    },
+    {
+      "id": "occ_1789009891269_27",
+      "status": "pending",
+      "task_id": "task_1789009891264_2",
+      "due_at": "2026-09-17T02:15:00.000Z",
+      "created_at": "2026-09-10T03:11:31.269Z"
+    },
+    {
+      "id": "occ_1789010066909_26",
+      "status": "pending",
+      "task_id": "task_1789009891307_3",
+      "due_at": "2026-09-10T02:15:00.000Z",
+      "created_at": "2026-09-10T03:14:26.909Z"
+    },
+    {
+      "id": "occ_1789010326825_27",
+      "status": "pending",
+      "task_id": "task_1789009654068_1",
+      "due_at": "2026-09-10T07:16:00.000Z",
+      "created_at": "2026-09-10T03:18:46.825Z"
+    },
+    {
+      "id": "occ_1789011008316_17",
+      "status": "pending",
+      "task_id": "task_1789011008310_3",
+      "due_at": "2026-09-10T02:15:00.000Z",
+      "created_at": "2026-09-10T03:30:08.316Z"
+    },
+    {
+      "id": "occ_1789011008317_18",
+      "status": "pending",
+      "task_id": "task_1789011008310_3",
+      "due_at": "2026-09-11T02:15:00.000Z",
+      "created_at": "2026-09-10T03:30:08.316Z"
+    },
+    {
+      "id": "occ_1789011008317_19",
+      "status": "pending",
+      "task_id": "task_1789011008310_3",
+      "due_at": "2026-09-12T02:15:00.000Z",
+      "created_at": "2026-09-10T03:30:08.316Z"
+    },
+    {
+      "id": "occ_1789011008317_20",
+      "status": "pending",
+      "task_id": "task_1789011008310_3",
+      "due_at": "2026-09-13T02:15:00.000Z",
+      "created_at": "2026-09-10T03:30:08.316Z"
+    },
+    {
+      "id": "occ_1789011008317_21",
+      "status": "pending",
+      "task_id": "task_1789011008310_3",
+      "due_at": "2026-09-14T02:15:00.000Z",
+      "created_at": "2026-09-10T03:30:08.316Z"
+    },
+    {
+      "id": "occ_1789011008317_22",
+      "status": "pending",
+      "task_id": "task_1789011008310_3",
+      "due_at": "2026-09-15T02:15:00.000Z",
+      "created_at": "2026-09-10T03:30:08.316Z"
+    },
+    {
+      "id": "occ_1789011008317_23",
+      "status": "pending",
+      "task_id": "task_1789011008310_3",
+      "due_at": "2026-09-16T02:15:00.000Z",
+      "created_at": "2026-09-10T03:30:08.316Z"
+    },
+    {
+      "id": "occ_1789011008317_24",
+      "status": "pending",
+      "task_id": "task_1789011008310_3",
+      "due_at": "2026-09-17T02:15:00.000Z",
+      "created_at": "2026-09-10T03:30:08.316Z"
+    },
+    {
+      "id": "occ_1789014832155_25",
+      "status": "pending",
+      "task_id": "task_1789014832149_4",
+      "due_at": "2026-09-10T02:15:00.000Z",
+      "created_at": "2026-09-10T04:33:52.155Z"
+    },
+    {
+      "id": "occ_1789014832155_26",
+      "status": "pending",
+      "task_id": "task_1789014832149_4",
+      "due_at": "2026-09-11T02:15:00.000Z",
+      "created_at": "2026-09-10T04:33:52.155Z"
+    },
+    {
+      "id": "occ_1789014832155_27",
+      "status": "pending",
+      "task_id": "task_1789014832149_4",
+      "due_at": "2026-09-12T02:15:00.000Z",
+      "created_at": "2026-09-10T04:33:52.155Z"
+    },
+    {
+      "id": "occ_1789014832155_28",
+      "status": "pending",
+      "task_id": "task_1789014832149_4",
+      "due_at": "2026-09-13T02:15:00.000Z",
+      "created_at": "2026-09-10T04:33:52.155Z"
+    },
+    {
+      "id": "occ_1789014832155_29",
+      "status": "pending",
+      "task_id": "task_1789014832149_4",
+      "due_at": "2026-09-14T02:15:00.000Z",
+      "created_at": "2026-09-10T04:33:52.155Z"
+    },
+    {
+      "id": "occ_1789014832155_30",
+      "status": "pending",
+      "task_id": "task_1789014832149_4",
+      "due_at": "2026-09-15T02:15:00.000Z",
+      "created_at": "2026-09-10T04:33:52.155Z"
+    },
+    {
+      "id": "occ_1789014832155_31",
+      "status": "pending",
+      "task_id": "task_1789014832149_4",
+      "due_at": "2026-09-16T02:15:00.000Z",
+      "created_at": "2026-09-10T04:33:52.155Z"
+    },
+    {
+      "id": "occ_1789014832155_32",
+      "status": "pending",
+      "task_id": "task_1789014832149_4",
+      "due_at": "2026-09-17T02:15:00.000Z",
+      "created_at": "2026-09-10T04:33:52.155Z"
+    }
+  ],
+  "completion_logs": [
+    {
+      "id": "log_1788971357602_0",
+      "photo_blob_key": null,
+      "photo_status": "none",
+      "photo_purged_at": null,
+      "occurrence_id": "occ_1788971298115_0",
+      "task_id": "task_1788971298107_0",
+      "task_title_snapshot": "Feed the cow",
+      "completed_at": "2026-09-09T16:29:17.599Z",
+      "completed_by": "acc_1788971231224_1",
+      "completed_by_name": "Farm Worker",
+      "worker_note": "",
+      "created_at": "2026-09-09T16:29:17.603Z"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alert_1789011973438_0",
+      "active": false,
+      "acknowledged_by": "acc_1789010445353_2",
+      "acknowledged_at": "2026-09-10T03:46:59.259Z",
+      "task_id": "task_1789011008310_3",
+      "message": "DO it fast",
+      "raised_at": "2026-09-10T03:46:13.436Z",
+      "raised_by": "acc_1788971231224_0"
+    },
+    {
+      "id": "alert_1789014514629_1",
+      "active": false,
+      "acknowledged_by": "acc_1789010445353_2",
+      "acknowledged_at": "2026-09-10T04:28:49.357Z",
+      "task_id": "task_1789011008310_3",
+      "message": "",
+      "raised_at": "2026-09-10T04:28:34.627Z",
+      "raised_by": "acc_1788971231224_0"
+    },
+    {
+      "id": "alert_1789014571692_2",
+      "active": false,
+      "acknowledged_by": "acc_1789010445353_2",
+      "acknowledged_at": "2026-09-10T04:31:14.398Z",
+      "task_id": "task_1789011008310_3",
+      "message": "",
+      "raised_at": "2026-09-10T04:29:31.690Z",
+      "raised_by": "acc_1788971231224_0"
+    },
+    {
+      "id": "alert_1789014665067_3",
+      "active": false,
+      "acknowledged_by": "acc_1789010445353_2",
+      "acknowledged_at": "2026-09-10T04:31:14.892Z",
+      "task_id": "task_1789011008310_3",
+      "message": "",
+      "raised_at": "2026-09-10T04:31:05.066Z",
+      "raised_by": "acc_1788971231224_0"
+    },
+    {
+      "id": "alert_1789014804174_4",
+      "active": false,
+      "acknowledged_by": "acc_1789010445353_2",
+      "acknowledged_at": "2026-09-10T04:33:37.467Z",
+      "task_id": "task_1789011008310_3",
+      "message": "",
+      "raised_at": "2026-09-10T04:33:24.172Z",
+      "raised_by": "acc_1788971231224_0"
+    },
+    {
+      "id": "alert_1789014840170_5",
+      "active": false,
+      "acknowledged_by": "acc_1789010445353_2",
+      "acknowledged_at": "2026-09-10T04:34:04.483Z",
+      "task_id": "task_1789014832149_4",
+      "message": "",
+      "raised_at": "2026-09-10T04:34:00.168Z",
+      "raised_by": "acc_1788971231224_0"
+    },
+    {
+      "id": "alert_1789014916510_6",
+      "active": false,
+      "acknowledged_by": "acc_1789010445353_2",
+      "acknowledged_at": "2026-09-10T04:35:27.193Z",
+      "task_id": "task_1789011008310_3",
+      "message": "",
+      "raised_at": "2026-09-10T04:35:16.509Z",
+      "raised_by": "acc_1788971231224_0"
+    }
+  ]
+}

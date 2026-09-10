@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "seededAt": "2026-09-10T03:29:23.229Z"
+  },
+  "accounts": [
+    {
+      "id": "acc_1789010963231_0",
+      "username": "admin",
+      "role": "owner",
+      "display_name": "Farm Owner",
+      "must_change_password": true,
+      "active": true,
+      "salt": "6c631f166c1c86c153d4db2d78a8ba4c",
+      "hash": "fb705278df1e91fc2e9bf49f6b8386ebd176a3e0c951d1afdc4ff16c86cfa52f",
+      "iterations": 100000,
+      "created_at": "2026-09-10T03:29:23.229Z",
+      "updated_at": "2026-09-10T03:29:23.229Z"
+    },
+    {
+      "id": "acc_1789010963231_1",
+      "username": "worker",
+      "role": "worker",
+      "display_name": "Farm Worker",
+      "must_change_password": true,
+      "active": true,
+      "salt": "6e723c70808ceabf88a7553e9b6fcfb9",
+      "hash": "946993f6ce462789328143b8b1e08687b5acc93b2c30afedb6668ef84c955d05",
+      "iterations": 100000,
+      "created_at": "2026-09-10T03:29:23.229Z",
+      "updated_at": "2026-09-10T03:29:23.229Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_1789010963272_0",
+      "skipped_due_at": [],
+      "title": "Old task",
+      "description": "",
+      "scheduled_at": "2026-08-01T02:15:00.000Z",
+      "recurrence": "none",
+      "recurrence_weekdays": null,
+      "recurrence_time": null,
+      "recurrence_ends_at": null,
+      "priority": "normal",
+      "photo_required": false,
+      "assigned_account_ids": [
+        "acc_1789010963231_1"
+      ],
+      "assigned_account_id": "acc_1789010963231_1",
+      "active": true,
+      "created_by": "owner",
+      "created_at": "2026-09-10T03:29:23.272Z",
+      "updated_at": "2026-09-10T03:29:23.272Z"
+    },
+    {
+      "id": "task_1789010963284_1",
+      "skipped_due_at": [],
+      "title": "New task",
+      "description": "",
+      "scheduled_at": "2026-09-15T02:15:00.000Z",
+      "recurrence": "none",
+      "recurrence_weekdays": null,
+      "recurrence_time": null,
+      "recurrence_ends_at": null,
+      "priority": "normal",
+      "photo_required": false,
+      "assigned_account_ids": [
+        "acc_1789010963231_1"
+      ],
+      "assigned_account_id": "acc_1789010963231_1",
+      "active": true,
+      "created_by": "owner",
+      "created_at": "2026-09-10T03:29:23.284Z",
+      "updated_at": "2026-09-10T03:29:23.284Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "id": "occ_1789010963277_0",
+      "status": "missed",
+      "task_id": "task_1789010963272_0",
+      "due_at": "2026-08-01T02:15:00.000Z",
+      "created_at": "2026-09-10T03:29:23.277Z"
+    },
+    {
+      "id": "occ_1789010963287_1",
+      "status": "pending",
+      "task_id": "task_1789010963284_1",
+      "due_at": "2026-09-15T02:15:00.000Z",
+      "created_at": "2026-09-10T03:29:23.287Z"
+    }
+  ],
+  "completion_logs": [],
+  "alerts": []
+}

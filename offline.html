@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#14532d" />
+  <title>Farm Manager — Offline</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Devanagari', sans-serif;
+      background: #fefce8;
+      color: #1c1917;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .card {
+      max-width: 22rem;
+      background: #fff;
+      border: 2px solid #14532d33;
+      border-radius: 1rem;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 24px #14532d14;
+    }
+    h1 { color: #14532d; font-size: 1.5rem; margin: 0 0 0.75rem; }
+    p { margin: 0; line-height: 1.6; font-size: 1.05rem; }
+    button {
+      margin-top: 1.25rem;
+      min-height: 44px;
+      min-width: 44px;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.75rem;
+      background: #14532d;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:focus-visible { outline: 3px solid #16a34a; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="title">No connection</h1>
+    <p id="body">Farm Manager needs the internet on first visit. Reopen when you are back online.</p>
+    <button type="button" id="retry">Try again</button>
+  </div>
+  <script>
+    const lang = localStorage.getItem('farm.lang') === 'ne' ? 'ne' : 'en';
+    const t = {
+      en: {
+        title: 'No connection',
+        body: 'Farm Manager needs the internet on first visit. Reopen when you are back online.',
+        retry: 'Try again',
+      },
+      ne: {
+        title: 'जडान छैन',
+        body: 'फार्म व्यवस्थापकलाई पहिलो पटक इन्टरनेट चाहिन्छ। फेरि अनलाइन हुँदा खोल्नुहोस्।',
+        retry: 'फेरि प्रयास गर्नुहोस्',
+      },
+    };
+    document.documentElement.lang = lang;
+    document.getElementById('title').textContent = t[lang].title;
+    document.getElementById('body').textContent = t[lang].body;
+    document.getElementById('retry').textContent = t[lang].retry;
+    document.getElementById('retry').addEventListener('click', () => location.reload());
+  </script>
+</body>
+</html>
