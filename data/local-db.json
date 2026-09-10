@@ -1,9 +1,38 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "seededAt": "2026-09-09T16:27:11.224Z"
+    "seededAt": "2026-09-09T10:47:03.275Z"
   },
   "accounts": [
-
-  ]
+    {
+      "id": "acc_seed_0",
+      "username": "admin",
+      "role": "owner",
+      "display_name": "Farm Owner",
+      "must_change_password": true,
+      "active": true,
+      "salt": "6c631f166c1c86c153d4db2d78a8ba4c",
+      "hash": "fb705278df1e91fc2e9bf49f6b8386ebd176a3e0c951d1afdc4ff16c86cfa52f",
+      "iterations": 100000,
+      "created_at": "2026-09-09T10:47:03.275Z",
+      "updated_at": "2026-09-09T10:47:03.275Z"
+    },
+    {
+      "id": "acc_seed_1",
+      "username": "worker",
+      "role": "worker",
+      "display_name": "Farm Worker",
+      "must_change_password": true,
+      "active": true,
+      "salt": "6e723c70808ceabf88a7553e9b6fcfb9",
+      "hash": "946993f6ce462789328143b8b1e08687b5acc93b2c30afedb6668ef84c955d05",
+      "iterations": 100000,
+      "created_at": "2026-09-09T10:47:03.275Z",
+      "updated_at": "2026-09-09T10:47:03.275Z"
+    }
+  ],
+  "tasks": [],
+  "occurrences": [],
+  "completion_logs": [],
+  "alerts": []
 }
