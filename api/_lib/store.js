@@ -1,12 +1,24 @@
-// Data-access layer — JSON file backend only.
-// Local dev:  data/local-db.json  (set FARM_LOCAL_DB to override)
-// Vercel prod: /tmp/db.json       (set FARM_LOCAL_DB=/tmp/db.json in env vars)
-//
-// /data/* is blocked from public URL access via vercel.json rewrites.
-// API handlers only ever call getStore() — they never touch the file directly.
+// Data-access layer — npoint.io JSON backend.
+// Set NPOINT_BIN_ID in environment variables.
 
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import path from 'node:path';
+const BIN_ID = process.env.NPOINT_BIN_ID;
+const BASE = `https://api.npoint.io/${BIN_ID}`;
+
+async function read() {
+  const res = await fetch(BASE);
+  if (!res.ok) throw new Error(`npoint read failed: ${res.status}`);
+  return res.json();
+}
+
+async function write(db) {
+  const res = await fetch(BASE, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(db),
+  });
+  if (!res.ok) throw new Error(`npoint write failed: ${res.status}`);
+}
+
 import { assigneeFieldsFromIds, normalizeTaskAssignees } from './assignees.js';
 
 export const SCHEMA_VERSION = 1;
@@ -28,34 +40,17 @@ function normalizeAccountRow(a) {
 }
 
 let storePromise = null;
-
 export function getStore() {
-  if (!storePromise) storePromise = createFileStore();
+  if (!storePromise) storePromise = Promise.resolve(createStore());
   return storePromise;
 }
-
 export function resetStoreForTests() {
   storePromise = null;
 }
 
-function createFileStore() {
-  const file = process.env.FARM_LOCAL_DB || path.join(process.cwd(), 'data', 'local-db.json');
-
-  async function read() {
-    try {
-      return JSON.parse(await readFile(file, 'utf8'));
-    } catch {
-      return { meta: {}, accounts: [], tasks: [], occurrences: [], completion_logs: [], alerts: [] };
-    }
-  }
-
-  async function write(db) {
-    await mkdir(path.dirname(file), { recursive: true });
-    await writeFile(file, JSON.stringify(db, null, 2) + '\n');
-  }
-
+function createStore() {
   return {
-    kind: 'file',
+    kind: 'npoint',
 
     async ensureSchema() {
       const db = await read();
@@ -113,7 +108,6 @@ function createFileStore() {
       await write(db);
     },
 
-    // ---- tasks -------------------------------------------------------------
     async listTasks() {
       return (await read()).tasks.map(normalizeTaskAssignees);
     },
@@ -164,7 +158,6 @@ function createFileStore() {
       await write(db);
     },
 
-    // ---- occurrences -------------------------------------------------------
     async listOccurrences({ sinceIso, fromIso, toIso } = {}) {
       const db = await read();
       const start = fromIso ?? sinceIso;
@@ -268,7 +261,6 @@ function createFileStore() {
       await write(db);
     },
 
-    // ---- completion logs ---------------------------------------------------
     async insertCompletionLog(log) {
       const db = await read();
       const row = {
@@ -302,7 +294,6 @@ function createFileStore() {
       return row;
     },
 
-    // ---- alerts ------------------------------------------------------------
     async insertAlert(alert) {
       const db = await read();
       const row = {
@@ -333,7 +324,6 @@ function createFileStore() {
       return row;
     },
 
-    // ---- backup / restore / reset ------------------------------------------
     async exportBackup() {
       const db = await read();
       return {
@@ -349,15 +339,14 @@ function createFileStore() {
     },
 
     async importBackup(payload) {
-      const db = {
+      await write({
         meta: { ...(payload.settings || {}), schemaVersion: SCHEMA_VERSION, importedAt: new Date().toISOString() },
         accounts: (payload.accounts || []).map(normalizeAccountRow),
         tasks: payload.tasks || [],
         occurrences: payload.occurrences || [],
         completion_logs: payload.completion_logs || [],
         alerts: payload.alerts || [],
-      };
-      await write(db);
+      });
     },
 
     async factoryReset(seedAccounts) {
