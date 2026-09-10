@@ -232,6 +232,8 @@ export default async function handler(req, res) {
       created_by: req.headers['x-account-id'] || 'owner',
     });
     await store.skipOccurrence(body.occurrenceId);
+    await expandAll(store);
+
     return res.status(201).json({ ok: true, id: oneTime.id });
   }
 
