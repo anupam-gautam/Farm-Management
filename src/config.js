@@ -8,7 +8,7 @@ export const CONFIG = {
   PHOTO_TTL_HOURS: 168,
 
   // Phase 7 — state polling interval while the page is visible.
-  POLL_INTERVAL_MS: 25_000,
+  POLL_INTERVAL_MS: 5_000,
 
   // Phase 5 — client-side image compression targets.
   IMAGE_MAX_DIMENSION: 1024,
